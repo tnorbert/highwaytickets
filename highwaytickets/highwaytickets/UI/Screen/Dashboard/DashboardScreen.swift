@@ -28,245 +28,186 @@ struct DashboardScreen: View {
     let parameters: DashboardScreenParameters
     let routing: DashboardScreenRouting
     
+    @State var selectedCounties: Set<County> = []
+
     var body: some View {
         ZStack {
             Color.viewBackground.ignoresSafeArea()
                         
-            HungaryMap()
+            HungaryMap(selectedCounties: $selectedCounties)
                 .border(.black)
-            
+                .onTapGesture {
+                    if Bool.random() {
+                        selectedCounties.insert(.bacskiskun)
+                    } else {
+                        selectedCounties.remove(.bacskiskun)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.budapest)
+                    } else {
+                        selectedCounties.remove(.budapest)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.pest)
+                    } else {
+                        selectedCounties.remove(.pest)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.baranya)
+                    } else {
+                        selectedCounties.remove(.baranya)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.bekes)
+                    } else {
+                        selectedCounties.remove(.bekes)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.borsodabaujzemplen)
+                    } else {
+                        selectedCounties.remove(.borsodabaujzemplen)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.csongradcsanad)
+                    } else {
+                        selectedCounties.remove(.csongradcsanad)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.fejer)
+                    } else {
+                        selectedCounties.remove(.fejer)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.gyormosonsopron)
+                    } else {
+                        selectedCounties.remove(.gyormosonsopron)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.hajdubihar)
+                    } else {
+                        selectedCounties.remove(.hajdubihar)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.heves)
+                    } else {
+                        selectedCounties.remove(.heves)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.jasznagykunszolnok)
+                    } else {
+                        selectedCounties.remove(.jasznagykunszolnok)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.komaromesztergom)
+                    } else {
+                        selectedCounties.remove(.komaromesztergom)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.nograd)
+                    } else {
+                        selectedCounties.remove(.nograd)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.somogy)
+                    } else {
+                        selectedCounties.remove(.somogy)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.szabolcsszatmarbereg)
+                    } else {
+                        selectedCounties.remove(.szabolcsszatmarbereg)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.tolna)
+                    } else {
+                        selectedCounties.remove(.tolna)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.vas)
+                    } else {
+                        selectedCounties.remove(.vas)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.veszprem)
+                    } else {
+                        selectedCounties.remove(.veszprem)
+                    }
+                    
+                    if Bool.random() {
+                        selectedCounties.insert(.zala)
+                    } else {
+                        selectedCounties.remove(.zala)
+                    }
+                    
+                    print("Good: \(checkSelectedCounties(selectedCounties: selectedCounties.compactMap { $0 }))")
+                }
+        }
+    }
+    
+    private func checkSelectedCounties(selectedCounties: [County]) -> Bool {
+        Log.log(WithCategory: "Dashboard", Message: "Selected countis: \(selectedCounties)", Type: .debug)
+                        
+        guard let firstSelectedCountry = selectedCounties.first else {
+            return false
         }
         
+        var visitedCounties: Set<County> = []
+        var stackOfCountriesToCheck: [County] = [firstSelectedCountry]
+        
+        while let currentCountryToCheck = stackOfCountriesToCheck.popLast() {
+            if visitedCounties.contains(currentCountryToCheck) { continue }
+            
+            visitedCounties.insert(currentCountryToCheck)
+            
+            let validNeighbors = currentCountryToCheck.neighbours.filter { selectedCounties.contains($0) }
+            stackOfCountriesToCheck.append(contentsOf: validNeighbors)
+        }
+        
+        return visitedCounties.count == selectedCounties.count
     }
     
 }
 
 struct HungaryMap: View {
     
-    @State private var isBacskiskunSelected: Bool = false
-    @State private var isBudapestSelected: Bool = false
-    @State private var isPestSelected: Bool = false
-    @State private var isBaranyaSelected: Bool = false
-    @State private var isBekesSelected: Bool = false
-    @State private var isBorsodabaujzemplenSelected: Bool = false
-    @State private var isCsongradcsanadSelected: Bool = false
-    @State private var isFejerSelected: Bool = false
-    @State private var isGyormosonsopronSelected: Bool = false
-    @State private var isHajdubiharSelected: Bool = false
-    @State private var isHevesSelected: Bool = false
-    @State private var isJasznagykunszolnokSelected: Bool = false
-    @State private var isKomaromesztergomSelected: Bool = false
-    @State private var isNogradSelected: Bool = false
-    @State private var isSomogySelected: Bool = false
-    @State private var isSzabolcsszatmarberegSelected: Bool = false
-    @State private var isTolnaSelected: Bool = false
-    @State private var isVasSelected: Bool = false
-    @State private var isVeszpremSelected: Bool = false
-    @State private var isZalaSelected: Bool = false
-
+    @Binding var selectedCounties: Set<County>
+    
     var body: some View {
         ZStack {
-            Image(isBacskiskunSelected ? "bacskiskun_selected" : "bacskiskun")
-                .resizable()
-            
-            Image(isBaranyaSelected ? "baranya_selected" : "baranya")
-                .resizable()
-                
-            Image(isBekesSelected ? "bekes_selected" : "bekes")
-                .resizable()
-                
-            Image(isBorsodabaujzemplenSelected ? "borsodabaujzemplen_selected" : "borsodabaujzemplen")
-                .resizable()
-                
-            Image(isBudapestSelected ? "budapest_selected" : "budapest")
-                .resizable()
-            
-            Image(isPestSelected ? "pest_selected" : "pest")
-                .resizable()
-            
-            Image(isCsongradcsanadSelected ? "csongradcsanad_selected" : "csongradcsanad")
-                .resizable()
-                
-            Image(isFejerSelected ? "fejer_selected" :"fejer")
-                .resizable()
-                
-            Image(isGyormosonsopronSelected ? "gyormosonsopron_selected" :"gyormosonsopron")
-                .resizable()
-                
-            Image(isHajdubiharSelected ? "hajdubihar_selected" : "hajdubihar")
-                .resizable()
-                
-            Image(isHevesSelected ? "heves_selected" :"heves")
-                .resizable()
-                
-            Image(isJasznagykunszolnokSelected ? "jasznagykunszolnok_selected" : "jasznagykunszolnok")
-                .resizable()
-                
-            Image(isKomaromesztergomSelected ? "komaromesztergom_selected" :"komaromesztergom")
-                .resizable()
-                
-            Image(isNogradSelected ? "nograd_selected" : "nograd")
-                .resizable()
-            
-            Image(isSomogySelected ? "somogy_selected" : "somogy")
-                .resizable()
-                
-            Image(isSzabolcsszatmarberegSelected ? "szabolcsszatmarbereg_selected" : "szabolcsszatmarbereg")
-                .resizable()
-                
-            Image(isTolnaSelected ? "tolna_selected" : "tolna")
-                .resizable()
-                
-            Image(isVasSelected ? "vas_selected" : "vas")
-                .resizable()
-                
-            Image(isVeszpremSelected ? "veszprem_selected" : "veszprem")
-                .resizable()
-                
-            Image(isZalaSelected ? "zala_selected" : "zala")
-                .resizable()
-                
+            ForEach(County.allCases) { county in
+                if selectedCounties.contains(county) {
+                    Image(county.selectedImageName)
+                        .resizable()
+                } else {
+                    Image(county.imageName)
+                        .resizable()
+                }
+            }
         }
         .aspectRatio(313/188, contentMode: .fit)
-        .onTapGesture {
-            isBacskiskunSelected = .random()
-            isBudapestSelected = false
-            isPestSelected = .random()
-            isBaranyaSelected = .random()
-            isBekesSelected = .random()
-            isBorsodabaujzemplenSelected = .random()
-            isCsongradcsanadSelected = .random()
-            isFejerSelected = .random()
-            isGyormosonsopronSelected = .random()
-            isHajdubiharSelected = .random()
-            isHevesSelected = .random()
-            isJasznagykunszolnokSelected = .random()
-            isKomaromesztergomSelected = .random()
-            isNogradSelected = .random()
-            isSomogySelected = .random()
-            isSzabolcsszatmarberegSelected = .random()
-            isTolnaSelected = .random()
-            isVasSelected = .random()
-            isVeszpremSelected = .random()
-            isZalaSelected = .random()
-            
-            var selectedCounties: [County] = []
-            
-            if isBacskiskunSelected {
-                selectedCounties.append(.bacskiskun)
-            }
-            
-            if isBudapestSelected {
-                selectedCounties.append(.budapest)
-            }
-            
-            if isPestSelected {
-                selectedCounties.append(.pest)
-            }
-            
-            if isBaranyaSelected {
-                selectedCounties.append(.baranya)
-            }
-            
-            if isBekesSelected {
-                selectedCounties.append(.bekes)
-            }
-            
-            if isBorsodabaujzemplenSelected {
-                selectedCounties.append(.borsodabaujzemplen)
-            }
-            
-            if isCsongradcsanadSelected {
-                selectedCounties.append(.csongradcsanad)
-            }
-            
-            if isFejerSelected {
-                selectedCounties.append(.fejer)
-            }
-            
-            if isGyormosonsopronSelected {
-                selectedCounties.append(.gyormosonsopron)
-            }
-            
-            if isHajdubiharSelected {
-                selectedCounties.append(.hajdubihar)
-            }
-            
-            if isHevesSelected {
-                selectedCounties.append(.heves)
-            }
-            
-            if isJasznagykunszolnokSelected {
-                selectedCounties.append(.jasznagykunszolnok)
-            }
-            
-            if isKomaromesztergomSelected {
-                selectedCounties.append(.komaromesztergom)
-            }
-            
-            if isNogradSelected {
-                selectedCounties.append(.nograd)
-            }
-            
-            if isSomogySelected {
-                selectedCounties.append(.somogy)
-            }
-            
-            if isSzabolcsszatmarberegSelected {
-                selectedCounties.append(.szabolcsszatmarbereg)
-            }
-            
-            if isTolnaSelected {
-                selectedCounties.append(.tolna)
-            }
-            
-            if isVasSelected {
-                selectedCounties.append(.vas)
-            }
-            
-            if isVeszpremSelected {
-                selectedCounties.append(.veszprem)
-            }
-            
-            if isZalaSelected {
-                selectedCounties.append(.zala)
-            }
-            
-            print("Good: \(checkSelectedCounties(selectedCounties: selectedCounties))")
-        }
     }
-    
-    private func checkSelectedCounties(selectedCounties: [County]) -> Bool {
-        Log.log(WithCategory: "Dashboard", Message: "Selected countis: \(selectedCounties)", Type: .debug)
-        
-        guard let firstSelectedCountry = selectedCounties.first else {
-            return false
-        }
-        
-        var visitedCounties: Set<County> = []
-        var stack: [County] = [firstSelectedCountry]
-        
-        while let current = stack.popLast() {
-            if visitedCounties.contains(current) {
-                continue
-            }
-            
-            visitedCounties.insert(current)
-            
-            let validNeighbors = current.neighbours.filter { selectedCounties.contains($0) }
-            stack.append(contentsOf: validNeighbors)
-        }
-        
-        guard visitedCounties.count == selectedCounties.count else {
-            return false
-        }
-        
-        return true
-    }
-    
 }
 
-enum County {
+enum County: String, CaseIterable, Identifiable {
+    
     case bacskiskun
     case budapest
     case pest
@@ -287,6 +228,18 @@ enum County {
     case vas
     case veszprem
     case zala
+    
+    var id: String {
+        return self.rawValue
+    }
+    
+    var imageName: String {
+        return self.rawValue
+    }
+    
+    var selectedImageName: String {
+        return self.rawValue + "_selected"
+    }
     
     var neighbours: [County] {
         switch self {
