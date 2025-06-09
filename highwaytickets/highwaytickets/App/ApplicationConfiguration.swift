@@ -57,7 +57,7 @@ class ApplicationConfiguration {
         #if DEVELOPMENT
         environment = .development
         appStoreURL = URL(string: "https://www.google.hu")!
-        apiBaseUrl = URL(string: "http://192.168.1.1:8080")!
+        apiBaseUrl = URL(string: "http://192.168.50.164:8080")!
         appVersionString += " DEV"
         #elseif STAGE
         environment = .stage

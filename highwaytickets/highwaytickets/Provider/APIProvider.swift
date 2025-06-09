@@ -35,7 +35,6 @@ class APIProvider: NetworkServiceProtocol {
         for header in endpoint.additionalHeaders {
             headers.add(header)
         }
-        
 
         Log.log(WithCategory: "APIProvider", Message: "Calling '\(endpoint.path)' with parameters '\(endpoint.parameters)'", Type: .info, CustomIcon: UniqueSymbols.globe.rawValue)
         

@@ -1,0 +1,290 @@
+{
+  "sourceLanguage" : "en",
+  "strings" : {
+    "" : {
+
+    },
+    "%@" : {
+
+    },
+    "%lld Ft" : {
+
+    },
+    "5 450 Ft" : {
+
+    },
+    "Add Item" : {
+
+    },
+    "county.bacskiskun.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Bács-Kiskun"
+          }
+        }
+      }
+    },
+    "county.baranya.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Baranya"
+          }
+        }
+      }
+    },
+    "county.bekes.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Békés"
+          }
+        }
+      }
+    },
+    "county.borsodabaujzemplen.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Borsod-Abaúj-Zemplén"
+          }
+        }
+      }
+    },
+    "county.budapest.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Budapest"
+          }
+        }
+      }
+    },
+    "county.csongradcsanad.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Csongrád-Csanád"
+          }
+        }
+      }
+    },
+    "county.fejer.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fejér"
+          }
+        }
+      }
+    },
+    "county.gyormosonsopron.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Győr-Moson-Sopron"
+          }
+        }
+      }
+    },
+    "county.hajdubihar.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hajdú-Bihar"
+          }
+        }
+      }
+    },
+    "county.heves.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Heves"
+          }
+        }
+      }
+    },
+    "county.jasznagykunszolnok.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Jász-Nagykun-Szolnok"
+          }
+        }
+      }
+    },
+    "county.komaromesztergom.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Komárom-Esztergom"
+          }
+        }
+      }
+    },
+    "county.nograd.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Nógrád"
+          }
+        }
+      }
+    },
+    "county.pest.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pest"
+          }
+        }
+      }
+    },
+    "county.somogy.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Somogy"
+          }
+        }
+      }
+    },
+    "county.szabolcsszatmarbereg.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Szabolcs-Szatmár-Bereg"
+          }
+        }
+      }
+    },
+    "county.tolna.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tolna"
+          }
+        }
+      }
+    },
+    "county.vas.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vas"
+          }
+        }
+      }
+    },
+    "county.veszprem.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Veszprém"
+          }
+        }
+      }
+    },
+    "county.zala.name" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Zala"
+          }
+        }
+      }
+    },
+    "dashboardScreen.button.yearlyCountyTickets" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Éves vármegyei matricák"
+          }
+        }
+      }
+    },
+    "general.button.next" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tovább"
+          }
+        }
+      }
+    },
+    "Item at %@" : {
+
+    },
+    "Országos matricák" : {
+
+    },
+    "Select an item" : {
+
+    },
+    "yearlyCountyTicketsScreen.label.summaryPrice" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fizetendő összeg"
+          }
+        }
+      }
+    },
+    "yearlyCountyTicketsScreen.label.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Éves vármegyei matricák"
+          }
+        }
+      }
+    }
+  },
+  "version" : "1.0"
+}

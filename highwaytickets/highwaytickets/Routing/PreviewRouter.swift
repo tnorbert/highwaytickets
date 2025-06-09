@@ -19,3 +19,7 @@ extension PreviewRouter: LoaderScreenRouting {
 extension PreviewRouter: DashboardScreenRouting {
     func onDashboardScreenRoutingAction(action: DashboardScreenRoutingAction) { }
 }
+
+extension PreviewRouter: YearlyCountyTicketsScreenRouting {
+    func onYearlyCountyTicketsScreenRoutingAction(action: YearlyCountyTicketsScreenRoutingAction) { }
+}

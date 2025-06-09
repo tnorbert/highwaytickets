@@ -26,7 +26,6 @@ struct highwayticketsApp: App {
             case .loader:
                 NavigationStack(path: $loaderRouter.path) {
                     loaderRouter.initialView()
-                        .environmentObject(HapticManager.shared)
                 }
                 .versionWatermarked(tapHandler: {
                     //Open in-app debug menu here
@@ -35,6 +34,7 @@ struct highwayticketsApp: App {
             case .content:
                 NavigationStack(path: $contentRouter.path) {
                     contentRouter.initialView()
+                        .environmentObject(HapticManager.shared)
                 }
                 .versionWatermarked(tapHandler: {
                     //Open in-app debug menu here

@@ -24,7 +24,22 @@ class ContentRouter: BaseRouter {
 extension ContentRouter: DashboardScreenRouting {
     
     func onDashboardScreenRoutingAction(action: DashboardScreenRoutingAction) {
-        Log.log(WithCategory: "ContentRouter", Message: "LoaderScreenRoutingAction: \(action)", Type: .info)
+        Log.log(WithCategory: "ContentRouter", Message: "DashboardScreenRoutingAction: \(action)", Type: .info)
+
+        switch action {
+        case .yearlyCountyTickets:
+            push(appRoute: .init(destination: .yearlyCountyTickets(parameters: .init(), router: self)))
+        }
+    }
+    
+}
+
+//MARK: - YearlyCountyTicketsScreenRouting
+
+extension ContentRouter: YearlyCountyTicketsScreenRouting {
+    
+    func onYearlyCountyTicketsScreenRoutingAction(action: YearlyCountyTicketsScreenRoutingAction) {
+        Log.log(WithCategory: "ContentRouter", Message: "YearlyCountyTicketsScreenRoutingAction: \(action)", Type: .info)
 
         switch action {
         case .close:

@@ -9,7 +9,7 @@ import Foundation
 
 enum APIVersion: String, RawRepresentable {
     
-    case v1 = "1"
+    case v1 = "v1"
     
     typealias RawValue = String
     
