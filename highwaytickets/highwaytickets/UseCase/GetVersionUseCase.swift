@@ -75,7 +75,7 @@ struct GetVersionUseCase: GetVersionUseCaseProtocol {
     func execute() async -> Swift.Result< (isNewer: Bool, isCritical: Bool), any Error> {
         let appVersion: String = ApplicationConfiguration.shared.version
         
-        try! await Task.sleep(for: .seconds(2.0))
+        try! await Task.sleep(for: .seconds(0.5))
         
         return .success((false, false))
         

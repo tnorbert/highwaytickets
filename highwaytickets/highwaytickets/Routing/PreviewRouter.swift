@@ -23,3 +23,7 @@ extension PreviewRouter: DashboardScreenRouting {
 extension PreviewRouter: YearlyCountyTicketsScreenRouting {
     func onYearlyCountyTicketsScreenRoutingAction(action: YearlyCountyTicketsScreenRoutingAction) { }
 }
+
+extension PreviewRouter: CheckoutScreenRouting {
+    func onCheckoutScreenRoutingAction(action: CheckoutScreenRoutingAction) { }
+}

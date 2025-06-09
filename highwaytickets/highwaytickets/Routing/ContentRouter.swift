@@ -29,6 +29,8 @@ extension ContentRouter: DashboardScreenRouting {
         switch action {
         case .yearlyCountyTickets:
             push(appRoute: .init(destination: .yearlyCountyTickets(parameters: .init(), router: self)))
+        case .checkout(vehicleInformation: let vehicleInformation, vignette: let vignette):
+            push(appRoute: .init(destination: .checkout(parameters: .init(vehicleInformation: vehicleInformation, vignette: vignette), router: self)))
         }
     }
     
@@ -41,6 +43,21 @@ extension ContentRouter: YearlyCountyTicketsScreenRouting {
     func onYearlyCountyTicketsScreenRoutingAction(action: YearlyCountyTicketsScreenRoutingAction) {
         Log.log(WithCategory: "ContentRouter", Message: "YearlyCountyTicketsScreenRoutingAction: \(action)", Type: .info)
 
+        switch action {
+        case .close:
+            break
+        }
+    }
+    
+}
+
+//MARK: - CheckoutScreenRouting
+
+extension ContentRouter: CheckoutScreenRouting {
+        
+    func onCheckoutScreenRoutingAction(action: CheckoutScreenRoutingAction) {
+        Log.log(WithCategory: "ContentRouter", Message: "CheckoutScreenRoutingAction: \(action)", Type: .info)
+        
         switch action {
         case .close:
             break

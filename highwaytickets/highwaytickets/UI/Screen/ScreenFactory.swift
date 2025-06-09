@@ -19,6 +19,8 @@ class ScreenFactory {
             DashboardScreenFactory.createView(parameters: parameters, router: router)
         case .yearlyCountyTickets(parameters: let parameters, router: let router):
             YearlyCountyTicketsScreenFactory.createView(parameters: parameters, router: router)
+        case .checkout(parameters: let parameters, router: let router):
+            CheckoutScreenFactory.createView(parameters: parameters, router: router)
 //        case .welcome(parameters: let parameters, router: let router):
 //            let viewModel: WelcomeScreenViewModel = .init()
 //            

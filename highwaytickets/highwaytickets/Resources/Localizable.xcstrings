@@ -16,6 +16,26 @@
     "Add Item" : {
 
     },
+    "checkoutScreen.label.plate" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rendszám"
+          }
+        }
+      }
+    },
+    "checkoutScreen.label.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vásárlás megerősítése"
+          }
+        }
+      }
+    },
     "county.bacskiskun.name" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -232,6 +252,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Zala"
+          }
+        }
+      }
+    },
+    "dashboardScreen.button.buy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Vásárlás"
           }
         }
       }

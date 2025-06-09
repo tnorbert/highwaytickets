@@ -11,6 +11,8 @@ import Alamofire
 enum Endpoints: NetworkServiceDescriptor {
 
     case highwayVignetteInformation
+    case vehicleInformation
+    case orderHighwayVignettes(vignettes: [HighwayVignette], vehicleInformation: VehicleInformation)
     
     var needsAuthentication: Bool {
         return false
@@ -21,6 +23,10 @@ enum Endpoints: NetworkServiceDescriptor {
             
         case .highwayVignetteInformation:
             return "highway/info"
+        case .vehicleInformation:
+            return "highway/vehicle"
+        case .orderHighwayVignettes:
+            return "highway/order"
         }
     }
     
@@ -29,6 +35,10 @@ enum Endpoints: NetworkServiceDescriptor {
             
         case .highwayVignetteInformation:
             return .get
+        case .vehicleInformation:
+            return .get
+        case .orderHighwayVignettes:
+            return .post
         }
     }
     
@@ -37,6 +47,10 @@ enum Endpoints: NetworkServiceDescriptor {
             
         case .highwayVignetteInformation:
             return URLEncoding.default
+        case .vehicleInformation:
+            return URLEncoding.default
+        case .orderHighwayVignettes:
+            return JSONEncoding.default
         }
     }
     
@@ -44,6 +58,10 @@ enum Endpoints: NetworkServiceDescriptor {
         switch self {
             
         case .highwayVignetteInformation:
+            return []
+        case .vehicleInformation:
+            return []
+        case .orderHighwayVignettes:
             return []
         }
     }
@@ -53,6 +71,19 @@ enum Endpoints: NetworkServiceDescriptor {
             
         case .highwayVignetteInformation:
             return [:]
+        case .vehicleInformation:
+            return [:]
+        case .orderHighwayVignettes(vignettes: let vignettes, vehicleInformation: let vehicleInformation):
+            
+            var vignettesToSend: [[String: Any]] = []
+            
+            for vignette in vignettes {
+                vignettesToSend.append(["type":vignette.type.rawValue,
+                                        "cost":vignette.price,
+                                        "category": vehicleInformation.type])
+            }
+            
+            return ["highwayOrders": vignettesToSend]
         }
     }
     
@@ -156,11 +187,23 @@ struct VehicleCategoryNameDTO: Codable {
     let hu: String
 }
 
-
-
 struct HighwayVignetteInformationResponse: Codable {
     let dataType: String
     let payload: HighwayVignetteInformationDTO
     let requestId: Int
     let statusCode: String
+}
+
+struct VehicleInformationResponse: Codable {
+    let internationalRegistrationCode: String
+    let name: String
+    let plate: String
+    let requestId: Int
+    let statusCode: String
+    let vignetteType: String
+    let type: String
+}
+
+struct OrderHighwayVignettesResponse: Codable {
+
 }

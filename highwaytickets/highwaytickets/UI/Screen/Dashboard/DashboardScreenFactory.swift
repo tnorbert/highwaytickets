@@ -11,7 +11,10 @@ class DashboardScreenFactory {
     
     @ViewBuilder
     static func createView(parameters: DashboardScreenParameters, router: DashboardScreenRouting) -> some View {
-        DashboardScreen(parameters: parameters, routing: router, getHighwayVignetteInformationUseCase:  GetHighwayVignetteInformationUseCase(remoteProvider: ProviderFactory.networkServiceProvider()))
+        DashboardScreen(parameters: parameters,
+                        routing: router,
+                        getHighwayVignetteInformationUseCase:  GetHighwayVignetteInformationUseCase(remoteProvider: ProviderFactory.networkServiceProvider()),
+                        vehicleInformationUseCase: GetVehicleInformationUseCase(remoteProvider: ProviderFactory.networkServiceProvider()))
             .environmentObject(HapticManager.shared)
     }
     

@@ -61,6 +61,10 @@
 		0FA4F24E2DF7065F00677DFE /* County.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F24D2DF7065E00677DFE /* County.swift */; };
 		0FA4F2502DF70F6E00677DFE /* GetHighwayVignetteInformationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F24F2DF70F6100677DFE /* GetHighwayVignetteInformationUseCase.swift */; };
 		0FA4F2522DF7108100677DFE /* Endpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F2512DF7107B00677DFE /* Endpoints.swift */; };
+		0FA4F2552DF740DD00677DFE /* GetVehicleInformationUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F2542DF740D200677DFE /* GetVehicleInformationUseCase.swift */; };
+		0FA4F2582DF743AD00677DFE /* CheckoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F2572DF743AB00677DFE /* CheckoutScreen.swift */; };
+		0FA4F25A2DF743B300677DFE /* CheckoutScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F2592DF743B000677DFE /* CheckoutScreenFactory.swift */; };
+		0FA4F25C2DF769DF00677DFE /* BuyVignettesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F25B2DF769DA00677DFE /* BuyVignettesUseCase.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -138,6 +142,10 @@
 		0FA4F24D2DF7065E00677DFE /* County.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = County.swift; sourceTree = "<group>"; };
 		0FA4F24F2DF70F6100677DFE /* GetHighwayVignetteInformationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHighwayVignetteInformationUseCase.swift; sourceTree = "<group>"; };
 		0FA4F2512DF7107B00677DFE /* Endpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoints.swift; sourceTree = "<group>"; };
+		0FA4F2542DF740D200677DFE /* GetVehicleInformationUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetVehicleInformationUseCase.swift; sourceTree = "<group>"; };
+		0FA4F2572DF743AB00677DFE /* CheckoutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutScreen.swift; sourceTree = "<group>"; };
+		0FA4F2592DF743B000677DFE /* CheckoutScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutScreenFactory.swift; sourceTree = "<group>"; };
+		0FA4F25B2DF769DA00677DFE /* BuyVignettesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyVignettesUseCase.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -293,9 +301,11 @@
 		0FA4F1C42DF19E4800677DFE /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				0FA4F24F2DF70F6100677DFE /* GetHighwayVignetteInformationUseCase.swift */,
 				0FA4F2172DF1C11F00677DFE /* GetVersionUseCase.swift */,
 				0FA4F21D2DF1C18500677DFE /* GetAppstoreVersionUseCase.swift */,
+				0FA4F2542DF740D200677DFE /* GetVehicleInformationUseCase.swift */,
+				0FA4F24F2DF70F6100677DFE /* GetHighwayVignetteInformationUseCase.swift */,
+				0FA4F25B2DF769DA00677DFE /* BuyVignettesUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -406,6 +416,7 @@
 				0FA4F2122DF1BAE000677DFE /* Loader */,
 				0FA4F2382DF1CD6100677DFE /* Dashboard */,
 				0FA4F2442DF6FDF200677DFE /* YearlyCountyTickets */,
+				0FA4F2562DF743A000677DFE /* Checkout */,
 				0FA4F2102DF1BABE00677DFE /* ScreenFactory.swift */,
 			);
 			path = Screen;
@@ -460,6 +471,15 @@
 			path = YearlyCountyTickets;
 			sourceTree = "<group>";
 		};
+		0FA4F2562DF743A000677DFE /* Checkout */ = {
+			isa = PBXGroup;
+			children = (
+				0FA4F2572DF743AB00677DFE /* CheckoutScreen.swift */,
+				0FA4F2592DF743B000677DFE /* CheckoutScreenFactory.swift */,
+			);
+			path = Checkout;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -468,6 +488,7 @@
 			buildConfigurationList = 0FA4F1A42DF1853A00677DFE /* Build configuration list for PBXNativeTarget "highwaytickets" */;
 			buildPhases = (
 				0FA4F17D2DF1853800677DFE /* Sources */,
+				0FA4F2532DF7350100677DFE /* Tags */,
 				0FA4F17E2DF1853800677DFE /* Frameworks */,
 				0FA4F17F2DF1853800677DFE /* Resources */,
 			);
@@ -603,6 +624,28 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0FA4F2532DF7350100677DFE /* Tags */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Tags;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "TAGS=\"TODO:|FIXME:|LOCALIZATION:|LOCALIZE:|FUTURE:\"\nERRORTAG=\"ERROR:\"\nfind \"${SRCROOT}\" \\( -name \"*.h\" -or -name \"*.m\" -or -name \"*.swift\" \\) -print0 | xargs -0 egrep --with-filename --line-number --only-matching \"($TAGS).*\\$|($ERRORTAG).*\\$\" | perl -p -e \"s/($TAGS)/ warning: \\$1/\" | perl -p -e \"s/($ERRORTAG)/ error: \\$1/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		0FA4F17D2DF1853800677DFE /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -624,7 +667,9 @@
 				0FA4F1F62DF1B18100677DFE /* LogItem.swift in Sources */,
 				0FA4F23A2DF1CD9A00677DFE /* DashboardScreen.swift in Sources */,
 				0FA4F2402DF6EE0200677DFE /* Font+Montserrat.swift in Sources */,
+				0FA4F25A2DF743B300677DFE /* CheckoutScreenFactory.swift in Sources */,
 				0FA4F2072DF1B39E00677DFE /* BaseRouter.swift in Sources */,
+				0FA4F2582DF743AD00677DFE /* CheckoutScreen.swift in Sources */,
 				0FA4F1FD2DF1B21600677DFE /* AppState.swift in Sources */,
 				0FA4F2312DF1C2AA00677DFE /* String+Localized.swift in Sources */,
 				0FA4F2162DF1BAED00677DFE /* LoaderScreenFactory.swift in Sources */,
@@ -642,6 +687,7 @@
 				0FA4F20D2DF1B3C600677DFE /* LoaderRouter.swift in Sources */,
 				0FA4F1FF2DF1B23F00677DFE /* AppPhase.swift in Sources */,
 				0FA4F22F2DF1C29B00677DFE /* JSONDecoder+dateDecodingStrategyFormatters.swift in Sources */,
+				0FA4F25C2DF769DF00677DFE /* BuyVignettesUseCase.swift in Sources */,
 				0FA4F2522DF7108100677DFE /* Endpoints.swift in Sources */,
 				0FA4F2092DF1B3AE00677DFE /* PreviewRouter.swift in Sources */,
 				0FA4F1CE2DF19EEF00677DFE /* ApplicationConfiguration.swift in Sources */,
@@ -651,6 +697,7 @@
 				0FA4F2052DF1B38A00677DFE /* AppRoute.swift in Sources */,
 				0FA4F22D2DF1C28500677DFE /* UniqueSymbols.swift in Sources */,
 				0FA4F21C2DF1C14F00677DFE /* NetworkServiceProtocol.swift in Sources */,
+				0FA4F2552DF740DD00677DFE /* GetVehicleInformationUseCase.swift in Sources */,
 				0FA4F21A2DF1C14300677DFE /* NetworkServiceDescriptor.swift in Sources */,
 				0FA4F1BB2DF1855500677DFE /* Item.swift in Sources */,
 				0FA4F24A2DF6FF0100677DFE /* CustomButton.swift in Sources */,
@@ -728,7 +775,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -792,7 +839,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;

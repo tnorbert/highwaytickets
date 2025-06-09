@@ -41,17 +41,26 @@ struct GetHighwayVignetteInformationUseCase_preview: GetHighwayVignetteInformati
 }
 
 struct HighwayVignette: Hashable {
-    var type: HighwayVignetteType
+    let type: HighwayVignetteType
+    let price: Int
     
     var name: String {
-        return "sajt"
+        switch type {
+        case .day:
+            //TODO: - Localize
+            return "D1 - napi (1 napos)"
+        case .week:
+            return "D1 - heti (10 napos)"
+        case .month:
+            return "D1 - havi"
+        }
     }
 }
 
-enum HighwayVignetteType {
-    case day
-    case week
-    case month
+enum HighwayVignetteType: String {
+    case day = "DAY"
+    case week = "WEEK"
+    case month = "MONTH"
 }
 
 struct HighwayVignetteInformation {
@@ -65,11 +74,11 @@ struct HighwayVignetteInformation {
         for vignette in response.payload.highwayVignettes {
             switch vignette.vignetteType {
             case .day:
-                highwayVignettes.append(.init(type: .day))
+                highwayVignettes.append(.init(type: .day, price: vignette.cost))
             case .week:
-                highwayVignettes.append(.init(type: .week))
+                highwayVignettes.append(.init(type: .week, price: vignette.cost))
             case .month:
-                highwayVignettes.append(.init(type: .month))
+                highwayVignettes.append(.init(type: .month, price: vignette.cost))
             case .year:
                 break
             }
@@ -77,6 +86,29 @@ struct HighwayVignetteInformation {
         
         self.highwayVignettes = highwayVignettes
         
+    }
+    
+}
+
+struct VehicleInformation {
+    
+    let name: String
+    let plate: String
+    let vignetteType: String
+    let type: String
+    
+    init(response: VehicleInformationResponse) {
+        self.name = response.name
+        self.plate = response.plate
+        self.vignetteType = response.vignetteType
+        self.type = response.type
+    }
+    
+    init(name: String, plate: String, vignetteType: String, type: String) {
+        self.name = name
+        self.plate = plate
+        self.vignetteType = vignetteType
+        self.type = type
     }
     
 }
