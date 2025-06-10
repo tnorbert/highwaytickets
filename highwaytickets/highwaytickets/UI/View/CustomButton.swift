@@ -65,12 +65,12 @@ struct CustomButton: View {
         .frame(height: 48)
         .padding(.horizontal)
         .background(backgroundView)
-        .cornerRadius(12)
+        .cornerRadius(24)
         .overlay(
-            RoundedRectangle(cornerRadius: 12)
-                .stroke(borderColor, lineWidth: style == .hollow || style == .iconOnly ? 1 : 0)
+            RoundedRectangle(cornerRadius: 24)
+                .stroke(borderColor, lineWidth: style == .hollow || style == .iconOnly ? 2 : 0)
         )
-        .contentShape(Rectangle()) // Makes the entire area tappable
+        .contentShape(Rectangle())
         .simultaneousGesture(
             DragGesture(minimumDistance: 0)
                 .updating($isPressed) { _, state, _ in
@@ -87,18 +87,9 @@ struct CustomButton: View {
     private var backgroundView: some View {
         switch style {
         case .full:
-            isPressed ? Color.darkBlue700 : Color.lightBlue700
+            isPressed ? Color.darkBlue700.opacity(0.6) : Color.darkBlue700
         case .hollow, .iconOnly:
-            isPressed ? Color.darkBlue700.opacity(0.6) : Color.lightBlue700
-        }
-    }
-
-    private var foregroundColor: Color {
-        switch style {
-        case .full:
-            return .white
-        case .hollow, .iconOnly:
-            return isPressed ? Color.black.opacity(0.6) : .black
+            isPressed ? Color.darkBlue700.opacity(0.6) : Color.clear
         }
     }
 
@@ -116,7 +107,7 @@ struct CustomButton: View {
         case .full:
             return Font.Montserrat.variable(size: .medium, weight: .bold)
         case .hollow:
-            return Font.Montserrat.variable(size: .medium, weight: .medium)
+            return Font.Montserrat.variable(size: .medium, weight: .bold)
         case .iconOnly:
             return Font.body
         }
@@ -127,7 +118,7 @@ struct CustomButton: View {
         case .full:
             return .white
         case .hollow, .iconOnly:
-            return isPressed ? .darkBlue700.opacity(0.6) : .lightBlue700
+            return isPressed ? .darkBlue700.opacity(0.6) : .darkBlue700
         }
     }
     

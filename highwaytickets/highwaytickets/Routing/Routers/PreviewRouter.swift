@@ -8,9 +8,7 @@
 import Foundation
 import SwiftUI
 
-final class PreviewRouter: ObservableObject {
-        
-}
+final class PreviewRouter: ObservableObject { }
 
 extension PreviewRouter: LoaderScreenRouting {
     func onLoaderScreenRoutingAction(action: LoaderScreenRoutingAction) { }
@@ -26,4 +24,8 @@ extension PreviewRouter: YearlyCountyTicketsScreenRouting {
 
 extension PreviewRouter: CheckoutScreenRouting {
     func onCheckoutScreenRoutingAction(action: CheckoutScreenRoutingAction) { }
+}
+
+extension PreviewRouter: SuccessfulPurchaseScreenRouting {
+    func onSuccessfulPurchaseScreenRoutingAction(action: SuccessfulPurchaseScreenRoutingAction) { }
 }

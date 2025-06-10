@@ -15,11 +15,15 @@ protocol YearlyCountyTicketsScreenRouting: AnyObject {
 
 enum YearlyCountyTicketsScreenRoutingAction {
     case close
+    case checkout(vehicleInformation: VehicleInformation, vignette: HighwayVignette, selectedCounties: [County])
 }
 
 //MARK: - Parameters
 
-struct YearlyCountyTicketsScreenParameters { }
+struct YearlyCountyTicketsScreenParameters {
+    let vehicleInformation: VehicleInformation
+    let vignette: HighwayVignette
+}
 
 //MARK: - View
 
@@ -27,30 +31,9 @@ struct YearlyCountyTicketsScreen: View {
     
     let parameters: YearlyCountyTicketsScreenParameters
     let routing: YearlyCountyTicketsScreenRouting
-    
-    @State private var isBacskiskunCheckboxChecked: Bool = false
-    @State private var isBudapestCheckboxChecked: Bool = false
-    @State private var isPestCheckboxChecked: Bool = false
-    @State private var isBaranyaCheckboxChecked: Bool = false
-    @State private var isBekesCheckboxChecked: Bool = false
-    @State private var isBorsodabaujzemplenCheckboxChecked: Bool = false
-    @State private var isCsongradcsanadCheckboxChecked: Bool = false
-    @State private var isFejerCheckboxChecked: Bool = false
-    @State private var isGyormosonsopronCheckboxChecked: Bool = false
-    @State private var isHajdubiharCheckboxChecked: Bool = false
-    @State private var isHevesCheckboxChecked: Bool = false
-    @State private var isJasznagykunszolnokCheckboxChecked: Bool = false
-    @State private var isKomaromesztergomCheckboxChecked: Bool = false
-    @State private var isNogradCheckboxChecked: Bool = false
-    @State private var isSomogyCheckboxChecked: Bool = false
-    @State private var isSzabolcsszatmarberegCheckboxChecked: Bool = false
-    @State private var isTolnaCheckboxChecked: Bool = false
-    @State private var isVasCheckboxChecked: Bool = false
-    @State private var isVeszpremCheckboxChecked: Bool = false
-    @State private var isZalaCheckboxChecked: Bool = false
 
+    @State var showBadSelectionAlert: Bool = false
     @State var selectedCounties: Set<County> = []
-    
     @State var price: Int = 0
 
     var body: some View {
@@ -59,35 +42,63 @@ struct YearlyCountyTicketsScreen: View {
                         
             ScrollView {
                 VStack {
-                    Text("yearlyCountyTicketsScreen.label.title")
-                        .font(Font.Montserrat.variable(size: .h3, weight: .bold))
+                    HStack {
+                        Text("yearlyCountyTicketsScreen.label.title")
+                            .font(Font.Montserrat.variable(size: .h3, weight: .bold))
+                            .foregroundStyle(.darkBlue700)
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.5)
+                        Spacer()
+                    }
                     
                     HungaryMap(selectedCounties: $selectedCounties)
+                        .padding([.top, .bottom])
                     
                     ForEach(County.allCases) { county in
-                        CountyCheckboxRow(county: county, selectedCounties: $selectedCounties)
+                        CountyCheckboxRow(county: county, price: parameters.vignette.price, selectedCounties: $selectedCounties)
+                            .padding([.bottom], 5)
                     }
                     
                     Divider()
+                        .padding([.top, .bottom])
                     
-                    Text("yearlyCountyTicketsScreen.label.summaryPrice")
-                        .font(Font.Montserrat.variable(size: .medium, weight: .bold))
-                    Text("\(price) Ft")
-                        .font(Font.Montserrat.variable(size: .h2, weight: .bold))
+                    HStack {
+                        VStack(alignment: .leading) {
+                            Text("yearlyCountyTicketsScreen.label.summaryPrice")
+                                .font(Font.Montserrat.variable(size: .medium, weight: .bold))
+                                .lineLimit(1)
+                                .foregroundStyle(.darkBlue700)
+                            Text("\(price) Ft")
+                                .font(Font.Montserrat.variable(size: .h1, weight: .bold))
+                                .lineLimit(1)
+                                .foregroundStyle(.darkBlue700)
+                        }
+                        Spacer()
+                    }
                     
                     CustomButton(style: .full, title: "general.button.next", isFullWidth: true) {
-                        
+                        if checkSelectedCounties(selectedCounties: selectedCounties.compactMap { $0 }) {
+                            routing.onYearlyCountyTicketsScreenRoutingAction(action: .checkout(vehicleInformation: parameters.vehicleInformation, vignette: parameters.vignette, selectedCounties: selectedCounties.compactMap { $0 }))
+                        } else {
+                            showBadSelectionAlert = true
+                        }
                     }
+                    .disabled(selectedCounties.isEmpty)
+                    .opacity(selectedCounties.isEmpty ? 0.6 : 1.0)
                 }
                 .padding(30)
-                
             }
         }
+        .navigationTitle("yearlyCountyTicketsScreen.navigationTitle")
+        .navigationBarTitleDisplayMode(.inline)
         .onChange(of: selectedCounties) { oldValue, newValue in
-            self.price = selectedCounties.count * 5450
-            
-            print("Good: \(checkSelectedCounties(selectedCounties: newValue.compactMap { $0 }))")
+            self.price = selectedCounties.count * self.parameters.vignette.price
         }
+        .alert("yearlyCountyTicketsScreen.alert.badSelection.title", isPresented: $showBadSelectionAlert, actions: {
+            Button("yearlyCountyTicketsScreen.alert.badSelection.okButton") { }
+        }, message: {
+            Text("yearlyCountyTicketsScreen.alert.badSelection.message")
+        })
     }
     
     private func checkSelectedCounties(selectedCounties: [County]) -> Bool {
@@ -136,6 +147,7 @@ fileprivate struct HungaryMap: View {
 fileprivate struct CountyCheckboxRow: View {
     
     let county: County
+    let price: Int
     
     @Binding var selectedCounties: Set<County>
     
@@ -156,14 +168,16 @@ fileprivate struct CountyCheckboxRow: View {
             CustomCheckBox(isOn: isChecked)
             Text(county.localizedName)
                 .font(Font.Montserrat.variable(size: .medium, weight: .regular))
+                .foregroundStyle(.darkBlue700)
             Spacer()
-            Text("5 450 Ft")
+            Text("\(price) Ft")
                 .font(Font.Montserrat.variable(size: .medium, weight: .bold))
+                .foregroundStyle(.darkBlue700)
         }
     }
     
 }
 
 #Preview {
-    YearlyCountyTicketsScreen(parameters: .init(), routing: PreviewRouter())
+    //YearlyCountyTicketsScreen(parameters: .init(vehicleInformation: .init(response: .in), vignette: .init()), routing: PreviewRouter())
 }

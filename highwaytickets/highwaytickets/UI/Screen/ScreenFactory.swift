@@ -21,16 +21,8 @@ class ScreenFactory {
             YearlyCountyTicketsScreenFactory.createView(parameters: parameters, router: router)
         case .checkout(parameters: let parameters, router: let router):
             CheckoutScreenFactory.createView(parameters: parameters, router: router)
-//        case .welcome(parameters: let parameters, router: let router):
-//            let viewModel: WelcomeScreenViewModel = .init()
-//            
-//            WelcomeScreenFactory.createView(parameters: parameters, router: router, viewModel: viewModel)
-//        case .login(parameters: let parameters, router: let router):
-//            let viewModel: LoginScreenViewModel = .init()
-//            
-//            LoginScreenFactory.createView(parameters: parameters, router: router, viewModel: viewModel)
-//        case .devmenu:
-//            DevInchi.shared.debugViewSwiftUI()
+        case .successfulPurchase(parameters: let parameters, router: let router):
+            SuccessfulPurchaseScreenFactory.createView(parameters: parameters, router: router)
         }
     }
     

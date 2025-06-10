@@ -10,11 +10,25 @@
     "%lld Ft" : {
 
     },
-    "5 450 Ft" : {
-
+    "checkoutScreen.button.buy" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Tovább"
+          }
+        }
+      }
     },
-    "Add Item" : {
-
+    "checkoutScreen.button.cancel" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mégsem"
+          }
+        }
+      }
     },
     "checkoutScreen.label.plate" : {
       "localizations" : {
@@ -26,12 +40,42 @@
         }
       }
     },
+    "checkoutScreen.label.summaryPrice" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Fizetendő összeg"
+          }
+        }
+      }
+    },
     "checkoutScreen.label.title" : {
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
             "value" : "Vásárlás megerősítése"
+          }
+        }
+      }
+    },
+    "checkoutScreen.label.type" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Matrica típusa"
+          }
+        }
+      }
+    },
+    "checkoutScreen.navigationTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Kosár"
           }
         }
       }
@@ -276,6 +320,52 @@
         }
       }
     },
+    "dashboardScreen.label.error" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hiba a betöltés közben!"
+          }
+        }
+      }
+    },
+    "dashboardScreen.label.loading" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Betöltés…"
+          }
+        }
+      }
+    },
+    "dashboardScreen.label.vignettes" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Országos matricák"
+          }
+        }
+      }
+    },
+    "dashboardScreen.navigationTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Főoldal"
+          }
+        }
+      }
+    },
+    "general.button.back" : {
+
+    },
+    "general.button.download" : {
+
+    },
     "general.button.next" : {
       "localizations" : {
         "en" : {
@@ -286,14 +376,117 @@
         }
       }
     },
-    "Item at %@" : {
+    "general.button.retry" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Újrapróbálkozás"
+          }
+        }
+      }
+    },
+    "highwayVignette.type.day" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D1 - napi (1 napos)"
+          }
+        }
+      }
+    },
+    "highwayVignette.type.month" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D1 - havi"
+          }
+        }
+      }
+    },
+    "highwayVignette.type.week" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "D1 - heti (10 napos)"
+          }
+        }
+      }
+    },
+    "highwayVignette.type.year" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Éves vármegyei"
+          }
+        }
+      }
+    },
+    "loaderScreen.alert.newCriticalUpdateAvailable.message" : {
 
     },
-    "Országos matricák" : {
+    "loaderScreen.alert.newCriticalUpdateAvailable.title" : {
 
     },
-    "Select an item" : {
+    "loaderScreen.alert.newUpdateAvailable.message" : {
 
+    },
+    "loaderScreen.alert.newUpdateAvailable.title" : {
+
+    },
+    "successfulPurchaseScreen.button.next" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rendben"
+          }
+        }
+      }
+    },
+    "successfulPurchaseScreen.label.successfulPurchase" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "A matricákat sikeresen kifizetted!"
+          }
+        }
+      }
+    },
+    "yearlyCountyTicketsScreen.alert.badSelection.message" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Csak egymást érintő vármegyék választhatóak ki!"
+          }
+        }
+      }
+    },
+    "yearlyCountyTicketsScreen.alert.badSelection.okButton" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rendben"
+          }
+        }
+      }
+    },
+    "yearlyCountyTicketsScreen.alert.badSelection.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Figylem!"
+          }
+        }
+      }
     },
     "yearlyCountyTicketsScreen.label.summaryPrice" : {
       "localizations" : {
@@ -311,6 +504,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Éves vármegyei matricák"
+          }
+        }
+      }
+    },
+    "yearlyCountyTicketsScreen.navigationTitle" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Országos matricák"
           }
         }
       }

@@ -21,7 +21,10 @@ struct BuyVignettesUseCase: BuyVignettesUseCaseProtocol {
         let result = await remoteProvider.request(Endpoints.orderHighwayVignettes(vignettes: vignettes, vehicleInformation: vehicleInformation), responseModelType: OrderHighwayVignettesResponse.self)
         
         switch result {
-        case .success(let response):
+        case .success(_):
+            //Since the backend is running locally, we need to have some artificial "delay" on the calls
+            try? await Task.sleep(for: .seconds(1))
+            
             return .success(Void())
         case .failure(let failure):
             return .failure(failure)

@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0FA4F1B82DF1855500677DFE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FA4F1B32DF1855500677DFE /* Assets.xcassets */; };
-		0FA4F1B92DF1855500677DFE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F1B42DF1855500677DFE /* ContentView.swift */; };
 		0FA4F1BA2DF1855500677DFE /* highwayticketsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F1B52DF1855500677DFE /* highwayticketsApp.swift */; };
-		0FA4F1BB2DF1855500677DFE /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F1B62DF1855500677DFE /* Item.swift */; };
 		0FA4F1CC2DF19ED800677DFE /* VersionWatermark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F1CB2DF19ED700677DFE /* VersionWatermark.swift */; };
 		0FA4F1CE2DF19EEF00677DFE /* ApplicationConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F1CD2DF19EEE00677DFE /* ApplicationConfiguration.swift */; };
 		0FA4F1D12DF19F2100677DFE /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0FA4F1D02DF19F2100677DFE /* Alamofire */; };
@@ -65,6 +63,19 @@
 		0FA4F2582DF743AD00677DFE /* CheckoutScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F2572DF743AB00677DFE /* CheckoutScreen.swift */; };
 		0FA4F25A2DF743B300677DFE /* CheckoutScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F2592DF743B000677DFE /* CheckoutScreenFactory.swift */; };
 		0FA4F25C2DF769DF00677DFE /* BuyVignettesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F25B2DF769DA00677DFE /* BuyVignettesUseCase.swift */; };
+		0FA4F25F2DF773AE00677DFE /* SuccessfulPurchaseScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F25E2DF773AC00677DFE /* SuccessfulPurchaseScreen.swift */; };
+		0FA4F2612DF773B600677DFE /* SuccessfulPurchaseScreenFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F2602DF773B100677DFE /* SuccessfulPurchaseScreenFactory.swift */; };
+		0FA4F2632DF774A100677DFE /* SuccessfulPurchaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F2622DF7749E00677DFE /* SuccessfulPurchaseRouter.swift */; };
+		0FA4F2662DF7D1C700677DFE /* HighwayVignetteInformationDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F2652DF7D1C600677DFE /* HighwayVignetteInformationDTO.swift */; };
+		0FA4F2682DF7D1D700677DFE /* CountyDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F2672DF7D1D600677DFE /* CountyDTO.swift */; };
+		0FA4F26A2DF7D1EA00677DFE /* HighwayVignettesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F2692DF7D1E900677DFE /* HighwayVignettesDTO.swift */; };
+		0FA4F26C2DF7D20800677DFE /* VehicleCategoriesDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F26B2DF7D20700677DFE /* VehicleCategoriesDTO.swift */; };
+		0FA4F26E2DF7D21900677DFE /* VehicleCategoryNameDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F26D2DF7D21800677DFE /* VehicleCategoryNameDTO.swift */; };
+		0FA4F2702DF7D23A00677DFE /* VignetteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F26F2DF7D23900677DFE /* VignetteType.swift */; };
+		0FA4F2782DF7DA3900677DFE /* HighwayVignette.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F2772DF7DA3800677DFE /* HighwayVignette.swift */; };
+		0FA4F27A2DF7DA5600677DFE /* HighwayVignetteInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F2792DF7DA5500677DFE /* HighwayVignetteInformation.swift */; };
+		0FA4F27C2DF7DA7600677DFE /* VehicleInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F27B2DF7DA7400677DFE /* VehicleInformation.swift */; };
+		0FA4F27E2DF7DA8900677DFE /* HighwayVignetteType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FA4F27D2DF7DA8800677DFE /* HighwayVignetteType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,9 +100,7 @@
 		0FA4F1902DF1853A00677DFE /* highwayticketsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = highwayticketsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA4F19A2DF1853A00677DFE /* highwayticketsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = highwayticketsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FA4F1B32DF1855500677DFE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0FA4F1B42DF1855500677DFE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0FA4F1B52DF1855500677DFE /* highwayticketsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = highwayticketsApp.swift; sourceTree = "<group>"; };
-		0FA4F1B62DF1855500677DFE /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		0FA4F1CB2DF19ED700677DFE /* VersionWatermark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionWatermark.swift; sourceTree = "<group>"; };
 		0FA4F1CD2DF19EEE00677DFE /* ApplicationConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationConfiguration.swift; sourceTree = "<group>"; };
 		0FA4F1D22DF1B13900677DFE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +155,19 @@
 		0FA4F2572DF743AB00677DFE /* CheckoutScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutScreen.swift; sourceTree = "<group>"; };
 		0FA4F2592DF743B000677DFE /* CheckoutScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckoutScreenFactory.swift; sourceTree = "<group>"; };
 		0FA4F25B2DF769DA00677DFE /* BuyVignettesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuyVignettesUseCase.swift; sourceTree = "<group>"; };
+		0FA4F25E2DF773AC00677DFE /* SuccessfulPurchaseScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulPurchaseScreen.swift; sourceTree = "<group>"; };
+		0FA4F2602DF773B100677DFE /* SuccessfulPurchaseScreenFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulPurchaseScreenFactory.swift; sourceTree = "<group>"; };
+		0FA4F2622DF7749E00677DFE /* SuccessfulPurchaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessfulPurchaseRouter.swift; sourceTree = "<group>"; };
+		0FA4F2652DF7D1C600677DFE /* HighwayVignetteInformationDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighwayVignetteInformationDTO.swift; sourceTree = "<group>"; };
+		0FA4F2672DF7D1D600677DFE /* CountyDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountyDTO.swift; sourceTree = "<group>"; };
+		0FA4F2692DF7D1E900677DFE /* HighwayVignettesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighwayVignettesDTO.swift; sourceTree = "<group>"; };
+		0FA4F26B2DF7D20700677DFE /* VehicleCategoriesDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCategoriesDTO.swift; sourceTree = "<group>"; };
+		0FA4F26D2DF7D21800677DFE /* VehicleCategoryNameDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleCategoryNameDTO.swift; sourceTree = "<group>"; };
+		0FA4F26F2DF7D23900677DFE /* VignetteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VignetteType.swift; sourceTree = "<group>"; };
+		0FA4F2772DF7DA3800677DFE /* HighwayVignette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighwayVignette.swift; sourceTree = "<group>"; };
+		0FA4F2792DF7DA5500677DFE /* HighwayVignetteInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighwayVignetteInformation.swift; sourceTree = "<group>"; };
+		0FA4F27B2DF7DA7400677DFE /* VehicleInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleInformation.swift; sourceTree = "<group>"; };
+		0FA4F27D2DF7DA8800677DFE /* HighwayVignetteType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighwayVignetteType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -211,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				0FA4F1BC2DF19DF500677DFE /* App */,
-				0FA4F1B42DF1855500677DFE /* ContentView.swift */,
 				0FA4F1BF2DF19E1000677DFE /* Routing */,
 				0FA4F1C02DF19E1900677DFE /* UI */,
 				0FA4F1C12DF19E2000677DFE /* Repository */,
@@ -224,7 +245,6 @@
 				0FA4F1C82DF19E6F00677DFE /* Extension */,
 				0FA4F1C92DF19E8000677DFE /* Preview Content */,
 				0FA4F1CA2DF19E9000677DFE /* Resources */,
-				0FA4F1B62DF1855500677DFE /* Item.swift */,
 			);
 			path = highwaytickets;
 			sourceTree = "<group>";
@@ -253,12 +273,9 @@
 		0FA4F1BF2DF19E1000677DFE /* Routing */ = {
 			isa = PBXGroup;
 			children = (
+				0FA4F2732DF7D85900677DFE /* Routers */,
 				0FA4F2022DF1B37400677DFE /* AppRouteDestination.swift */,
 				0FA4F2042DF1B38900677DFE /* AppRoute.swift */,
-				0FA4F2062DF1B39D00677DFE /* BaseRouter.swift */,
-				0FA4F2082DF1B3AD00677DFE /* PreviewRouter.swift */,
-				0FA4F20C2DF1B3C500677DFE /* LoaderRouter.swift */,
-				0FA4F2362DF1CCF800677DFE /* ContentRouter.swift */,
 			);
 			path = Routing;
 			sourceTree = "<group>";
@@ -266,9 +283,9 @@
 		0FA4F1C02DF19E1900677DFE /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				0FA4F1CB2DF19ED700677DFE /* VersionWatermark.swift */,
-				0FA4F20F2DF1B40000677DFE /* View */,
 				0FA4F20E2DF1B3F900677DFE /* Screen */,
+				0FA4F20F2DF1B40000677DFE /* View */,
+				0FA4F2742DF7D8D200677DFE /* Modifiers */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -292,7 +309,7 @@
 		0FA4F1C32DF19E3C00677DFE /* Provider */ = {
 			isa = PBXGroup;
 			children = (
-				0FA4F2242DF1C1F700677DFE /* APIProvider.swift */,
+				0FA4F2752DF7D96500677DFE /* API */,
 				0FA4F2262DF1C20D00677DFE /* ProviderFactory.swift */,
 			);
 			path = Provider;
@@ -321,8 +338,8 @@
 		0FA4F1C62DF19E5F00677DFE /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				0FA4F2712DF7D27700677DFE /* Struct */,
 				0FA4F21F2DF1C1AD00677DFE /* Enum */,
-				0FA4F1FE2DF1B23E00677DFE /* AppPhase.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -357,8 +374,8 @@
 		0FA4F1CA2DF19E9000677DFE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				0FA4F2722DF7D2AA00677DFE /* Fonts */,
 				0FA4F1B32DF1855500677DFE /* Assets.xcassets */,
-				0FA4F2412DF6EE1700677DFE /* Montserrat-VariableFont_wght.ttf */,
 				0FA4F24B2DF6FF8800677DFE /* Localizable.xcstrings */,
 			);
 			path = Resources;
@@ -417,6 +434,7 @@
 				0FA4F2382DF1CD6100677DFE /* Dashboard */,
 				0FA4F2442DF6FDF200677DFE /* YearlyCountyTickets */,
 				0FA4F2562DF743A000677DFE /* Checkout */,
+				0FA4F25D2DF7739600677DFE /* SuccessfulPurchase */,
 				0FA4F2102DF1BABE00677DFE /* ScreenFactory.swift */,
 			);
 			path = Screen;
@@ -443,12 +461,14 @@
 		0FA4F21F2DF1C1AD00677DFE /* Enum */ = {
 			isa = PBXGroup;
 			children = (
+				0FA4F2762DF7D9B300677DFE /* Errors */,
+				0FA4F1FE2DF1B23E00677DFE /* AppPhase.swift */,
+				0FA4F26F2DF7D23900677DFE /* VignetteType.swift */,
 				0FA4F2512DF7107B00677DFE /* Endpoints.swift */,
 				0FA4F24D2DF7065E00677DFE /* County.swift */,
 				0FA4F2282DF1C24F00677DFE /* APIVersion.swift */,
-				0FA4F2202DF1C1B100677DFE /* BackendError.swift */,
-				0FA4F2222DF1C1C500677DFE /* NetworkError.swift */,
 				0FA4F22C2DF1C28400677DFE /* UniqueSymbols.swift */,
+				0FA4F27D2DF7DA8800677DFE /* HighwayVignetteType.swift */,
 			);
 			path = Enum;
 			sourceTree = "<group>";
@@ -478,6 +498,83 @@
 				0FA4F2592DF743B000677DFE /* CheckoutScreenFactory.swift */,
 			);
 			path = Checkout;
+			sourceTree = "<group>";
+		};
+		0FA4F25D2DF7739600677DFE /* SuccessfulPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				0FA4F25E2DF773AC00677DFE /* SuccessfulPurchaseScreen.swift */,
+				0FA4F2602DF773B100677DFE /* SuccessfulPurchaseScreenFactory.swift */,
+			);
+			path = SuccessfulPurchase;
+			sourceTree = "<group>";
+		};
+		0FA4F2642DF7D1B900677DFE /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				0FA4F26D2DF7D21800677DFE /* VehicleCategoryNameDTO.swift */,
+				0FA4F26B2DF7D20700677DFE /* VehicleCategoriesDTO.swift */,
+				0FA4F2692DF7D1E900677DFE /* HighwayVignettesDTO.swift */,
+				0FA4F2672DF7D1D600677DFE /* CountyDTO.swift */,
+				0FA4F2652DF7D1C600677DFE /* HighwayVignetteInformationDTO.swift */,
+			);
+			path = DTO;
+			sourceTree = "<group>";
+		};
+		0FA4F2712DF7D27700677DFE /* Struct */ = {
+			isa = PBXGroup;
+			children = (
+				0FA4F2772DF7DA3800677DFE /* HighwayVignette.swift */,
+				0FA4F2792DF7DA5500677DFE /* HighwayVignetteInformation.swift */,
+				0FA4F27B2DF7DA7400677DFE /* VehicleInformation.swift */,
+				0FA4F2642DF7D1B900677DFE /* DTO */,
+			);
+			path = Struct;
+			sourceTree = "<group>";
+		};
+		0FA4F2722DF7D2AA00677DFE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				0FA4F2412DF6EE1700677DFE /* Montserrat-VariableFont_wght.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		0FA4F2732DF7D85900677DFE /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				0FA4F2062DF1B39D00677DFE /* BaseRouter.swift */,
+				0FA4F2082DF1B3AD00677DFE /* PreviewRouter.swift */,
+				0FA4F20C2DF1B3C500677DFE /* LoaderRouter.swift */,
+				0FA4F2362DF1CCF800677DFE /* ContentRouter.swift */,
+				0FA4F2622DF7749E00677DFE /* SuccessfulPurchaseRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		0FA4F2742DF7D8D200677DFE /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				0FA4F1CB2DF19ED700677DFE /* VersionWatermark.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		0FA4F2752DF7D96500677DFE /* API */ = {
+			isa = PBXGroup;
+			children = (
+				0FA4F2242DF1C1F700677DFE /* APIProvider.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		0FA4F2762DF7D9B300677DFE /* Errors */ = {
+			isa = PBXGroup;
+			children = (
+				0FA4F2202DF1C1B100677DFE /* BackendError.swift */,
+				0FA4F2222DF1C1C500677DFE /* NetworkError.swift */,
+			);
+			path = Errors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -656,6 +753,8 @@
 				0FA4F1FB2DF1B1E800677DFE /* SceneDelegate.swift in Sources */,
 				0FA4F2032DF1B37400677DFE /* AppRouteDestination.swift in Sources */,
 				0FA4F2482DF6FE2400677DFE /* YearlyCountyTicketsScreenFactory.swift in Sources */,
+				0FA4F27E2DF7DA8900677DFE /* HighwayVignetteType.swift in Sources */,
+				0FA4F26E2DF7D21900677DFE /* VehicleCategoryNameDTO.swift in Sources */,
 				0FA4F1F32DF1B18100677DFE /* LogSymbols.swift in Sources */,
 				0FA4F2112DF1BABF00677DFE /* ScreenFactory.swift in Sources */,
 				0FA4F2232DF1C1C600677DFE /* NetworkError.swift in Sources */,
@@ -667,10 +766,15 @@
 				0FA4F1F62DF1B18100677DFE /* LogItem.swift in Sources */,
 				0FA4F23A2DF1CD9A00677DFE /* DashboardScreen.swift in Sources */,
 				0FA4F2402DF6EE0200677DFE /* Font+Montserrat.swift in Sources */,
+				0FA4F2782DF7DA3900677DFE /* HighwayVignette.swift in Sources */,
+				0FA4F2702DF7D23A00677DFE /* VignetteType.swift in Sources */,
 				0FA4F25A2DF743B300677DFE /* CheckoutScreenFactory.swift in Sources */,
+				0FA4F27A2DF7DA5600677DFE /* HighwayVignetteInformation.swift in Sources */,
 				0FA4F2072DF1B39E00677DFE /* BaseRouter.swift in Sources */,
 				0FA4F2582DF743AD00677DFE /* CheckoutScreen.swift in Sources */,
 				0FA4F1FD2DF1B21600677DFE /* AppState.swift in Sources */,
+				0FA4F2662DF7D1C700677DFE /* HighwayVignetteInformationDTO.swift in Sources */,
+				0FA4F26A2DF7D1EA00677DFE /* HighwayVignettesDTO.swift in Sources */,
 				0FA4F2312DF1C2AA00677DFE /* String+Localized.swift in Sources */,
 				0FA4F2162DF1BAED00677DFE /* LoaderScreenFactory.swift in Sources */,
 				0FA4F2142DF1BAE600677DFE /* LoderScreen.swift in Sources */,
@@ -679,27 +783,31 @@
 				0FA4F2352DF1C32000677DFE /* AlamofireNetworkEventMonitor.swift in Sources */,
 				0FA4F2462DF6FE1800677DFE /* YearlyCountyTicketsScreen.swift in Sources */,
 				0FA4F1F82DF1B18100677DFE /* LogConfig.swift in Sources */,
+				0FA4F25F2DF773AE00677DFE /* SuccessfulPurchaseScreen.swift in Sources */,
 				0FA4F1F92DF1B18100677DFE /* Log.swift in Sources */,
 				0FA4F2252DF1C1F800677DFE /* APIProvider.swift in Sources */,
-				0FA4F1B92DF1855500677DFE /* ContentView.swift in Sources */,
 				0FA4F2272DF1C20E00677DFE /* ProviderFactory.swift in Sources */,
 				0FA4F23E2DF6EDC900677DFE /* CustomCheckBox.swift in Sources */,
 				0FA4F20D2DF1B3C600677DFE /* LoaderRouter.swift in Sources */,
 				0FA4F1FF2DF1B23F00677DFE /* AppPhase.swift in Sources */,
 				0FA4F22F2DF1C29B00677DFE /* JSONDecoder+dateDecodingStrategyFormatters.swift in Sources */,
 				0FA4F25C2DF769DF00677DFE /* BuyVignettesUseCase.swift in Sources */,
+				0FA4F26C2DF7D20800677DFE /* VehicleCategoriesDTO.swift in Sources */,
 				0FA4F2522DF7108100677DFE /* Endpoints.swift in Sources */,
 				0FA4F2092DF1B3AE00677DFE /* PreviewRouter.swift in Sources */,
 				0FA4F1CE2DF19EEF00677DFE /* ApplicationConfiguration.swift in Sources */,
 				0FA4F1CC2DF19ED800677DFE /* VersionWatermark.swift in Sources */,
 				0FA4F1BA2DF1855500677DFE /* highwayticketsApp.swift in Sources */,
+				0FA4F2612DF773B600677DFE /* SuccessfulPurchaseScreenFactory.swift in Sources */,
 				0FA4F23C2DF1CDA200677DFE /* DashboardScreenFactory.swift in Sources */,
 				0FA4F2052DF1B38A00677DFE /* AppRoute.swift in Sources */,
 				0FA4F22D2DF1C28500677DFE /* UniqueSymbols.swift in Sources */,
 				0FA4F21C2DF1C14F00677DFE /* NetworkServiceProtocol.swift in Sources */,
 				0FA4F2552DF740DD00677DFE /* GetVehicleInformationUseCase.swift in Sources */,
+				0FA4F2682DF7D1D700677DFE /* CountyDTO.swift in Sources */,
+				0FA4F2632DF774A100677DFE /* SuccessfulPurchaseRouter.swift in Sources */,
+				0FA4F27C2DF7DA7600677DFE /* VehicleInformation.swift in Sources */,
 				0FA4F21A2DF1C14300677DFE /* NetworkServiceDescriptor.swift in Sources */,
-				0FA4F1BB2DF1855500677DFE /* Item.swift in Sources */,
 				0FA4F24A2DF6FF0100677DFE /* CustomButton.swift in Sources */,
 				0FA4F2502DF70F6E00677DFE /* GetHighwayVignetteInformationUseCase.swift in Sources */,
 				0FA4F2212DF1C1B100677DFE /* BackendError.swift in Sources */,
@@ -870,11 +978,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = highwaytickets/App/Plists/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Tickets;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -902,11 +1012,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = highwaytickets/App/Plists/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Tickets;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

@@ -29,8 +29,6 @@ extension LoaderRouter: LoaderScreenRouting {
         switch action {
         case .content:
             AppState.shared.appPhase = .content
-        case .authentication:
-            break
         }
     }
     

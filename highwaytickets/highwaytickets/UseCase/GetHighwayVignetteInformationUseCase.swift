@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol GetHighwayVignetteInformationUseCaseProtocol {
     func execute() async -> Swift.Result<HighwayVignetteInformation, Error>
@@ -24,6 +25,9 @@ struct GetHighwayVignetteInformationUseCase: GetHighwayVignetteInformationUseCas
         
         switch result {
         case .success(let response):
+            //Since the backend is running locally, we need to have some artificial "delay" on the calls
+            try? await Task.sleep(for: .milliseconds(250))
+            
             return .success(.init(response: response))
         case .failure(let failure):
             return .failure(failure)
@@ -36,79 +40,6 @@ struct GetHighwayVignetteInformationUseCase_preview: GetHighwayVignetteInformati
     
     func execute() async  -> Swift.Result<HighwayVignetteInformation, Error> {
         return .failure(NSError(domain: "", code: 1))
-    }
-    
-}
-
-struct HighwayVignette: Hashable {
-    let type: HighwayVignetteType
-    let price: Int
-    
-    var name: String {
-        switch type {
-        case .day:
-            //TODO: - Localize
-            return "D1 - napi (1 napos)"
-        case .week:
-            return "D1 - heti (10 napos)"
-        case .month:
-            return "D1 - havi"
-        }
-    }
-}
-
-enum HighwayVignetteType: String {
-    case day = "DAY"
-    case week = "WEEK"
-    case month = "MONTH"
-}
-
-struct HighwayVignetteInformation {
-    
-    let highwayVignettes: [HighwayVignette]
-    
-    init(response: HighwayVignetteInformationResponse) {
-        
-        var highwayVignettes: [HighwayVignette] = []
-        
-        for vignette in response.payload.highwayVignettes {
-            switch vignette.vignetteType {
-            case .day:
-                highwayVignettes.append(.init(type: .day, price: vignette.cost))
-            case .week:
-                highwayVignettes.append(.init(type: .week, price: vignette.cost))
-            case .month:
-                highwayVignettes.append(.init(type: .month, price: vignette.cost))
-            case .year:
-                break
-            }
-        }
-        
-        self.highwayVignettes = highwayVignettes
-        
-    }
-    
-}
-
-struct VehicleInformation {
-    
-    let name: String
-    let plate: String
-    let vignetteType: String
-    let type: String
-    
-    init(response: VehicleInformationResponse) {
-        self.name = response.name
-        self.plate = response.plate
-        self.vignetteType = response.vignetteType
-        self.type = response.type
-    }
-    
-    init(name: String, plate: String, vignetteType: String, type: String) {
-        self.name = name
-        self.plate = plate
-        self.vignetteType = vignetteType
-        self.type = type
     }
     
 }

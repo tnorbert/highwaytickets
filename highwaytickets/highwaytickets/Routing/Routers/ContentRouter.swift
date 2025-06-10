@@ -27,10 +27,10 @@ extension ContentRouter: DashboardScreenRouting {
         Log.log(WithCategory: "ContentRouter", Message: "DashboardScreenRoutingAction: \(action)", Type: .info)
 
         switch action {
-        case .yearlyCountyTickets:
-            push(appRoute: .init(destination: .yearlyCountyTickets(parameters: .init(), router: self)))
+        case .yearlyCountyTickets(vehicleInformation: let vehicleInformation, vignette: let vignette):
+            push(appRoute: .init(destination: .yearlyCountyTickets(parameters: .init(vehicleInformation: vehicleInformation, vignette: vignette), router: self)))
         case .checkout(vehicleInformation: let vehicleInformation, vignette: let vignette):
-            push(appRoute: .init(destination: .checkout(parameters: .init(vehicleInformation: vehicleInformation, vignette: vignette), router: self)))
+            push(appRoute: .init(destination: .checkout(parameters: .init(vehicleInformation: vehicleInformation, vignette: vignette, selectedCounties: []), router: self)))
         }
     }
     
@@ -45,7 +45,9 @@ extension ContentRouter: YearlyCountyTicketsScreenRouting {
 
         switch action {
         case .close:
-            break
+            goBack()
+        case .checkout(vehicleInformation: let vehicleInformation, vignette: let vignette, selectedCounties: let selectedCounties):
+            push(appRoute: .init(destination: .checkout(parameters: .init(vehicleInformation: vehicleInformation, vignette: vignette, selectedCounties: selectedCounties), router: self)))
         }
     }
     
@@ -60,7 +62,9 @@ extension ContentRouter: CheckoutScreenRouting {
         
         switch action {
         case .close:
-            break
+            goBack()
+        case .successfullPurchase:
+            AppState.shared.appPhase = .successfulPurchase
         }
     }
     

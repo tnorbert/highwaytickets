@@ -12,6 +12,5 @@ enum AppRouteDestination {
     case dashboard(parameters: DashboardScreenParameters, router: DashboardScreenRouting)
     case yearlyCountyTickets(parameters: YearlyCountyTicketsScreenParameters, router: YearlyCountyTicketsScreenRouting)
     case checkout(parameters: CheckoutScreenParameters, router: CheckoutScreenRouting)
-    
-    //case welcome(parameters: WelcomeScreenParameters, router: WelcomeScreenRouting)
+    case successfulPurchase(parameters: SuccessfulPurchaseScreenParameters, router: SuccessfulPurchaseScreenRouting)
 }

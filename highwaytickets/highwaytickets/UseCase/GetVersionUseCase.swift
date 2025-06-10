@@ -75,18 +75,20 @@ struct GetVersionUseCase: GetVersionUseCaseProtocol {
     func execute() async -> Swift.Result< (isNewer: Bool, isCritical: Bool), any Error> {
         let appVersion: String = ApplicationConfiguration.shared.version
         
+        //Normally, I have an endpoint for retrieving application versions so we can force the user to update the application if neccesarry. I left it here for demonstration purposes and I just return after half a second.
+        
         try! await Task.sleep(for: .seconds(0.5))
         
         return .success((false, false))
         
-        let result = await remoteProvider.request(VersionEndpoints.version(applicationVersion: appVersion), responseModelType: VersionResponse.self)
-        
-        switch result {
-        case .success(let response):
-            return .success((isNewer: response.isNewer, isCritical: response.isCritical))
-        case .failure(let failure):
-            return .failure(failure)
-        }
+//        let result = await remoteProvider.request(VersionEndpoints.version(applicationVersion: appVersion), responseModelType: VersionResponse.self)
+//        
+//        switch result {
+//        case .success(let response):
+//            return .success((isNewer: response.isNewer, isCritical: response.isCritical))
+//        case .failure(let failure):
+//            return .failure(failure)
+//        }
     }
     
 }

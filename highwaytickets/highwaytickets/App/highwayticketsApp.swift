@@ -17,6 +17,7 @@ struct highwayticketsApp: App {
     
     @StateObject var loaderRouter: LoaderRouter = LoaderRouter()
     @StateObject var contentRouter: ContentRouter = ContentRouter()
+    @StateObject var successfulPurchaseRouter: SuccessfulPurchaseRouter = SuccessfulPurchaseRouter()
 
     @State var windowID: String = UUID().uuidString
 
@@ -40,6 +41,15 @@ struct highwayticketsApp: App {
                     //Open in-app debug menu here
                 })
                 .id(windowID)
+            case .successfulPurchase:
+                NavigationStack(path: $successfulPurchaseRouter.path) {
+                    successfulPurchaseRouter.initialView()
+                        .environmentObject(HapticManager.shared)
+                }
+                .versionWatermarked(tapHandler: {
+                    //Open in-app debug menu here
+                })
+                .id(windowID)
             }
         }
         .onChange(of: appState.appPhase) { oldPhase, newPhase in
@@ -47,6 +57,7 @@ struct highwayticketsApp: App {
             
             loaderRouter.clearPath()
             contentRouter.clearPath()
+            successfulPurchaseRouter.clearPath()
             
             windowID = UUID().uuidString
         }

@@ -17,22 +17,21 @@ struct CustomCheckBox: View {
     
     var body: some View {
         return HStack(spacing: 0) {
-         
             Image(systemName: "checkmark")
                 .renderingMode(.template)
                 .resizable()
                 .foregroundStyle(.darkBlue700)
                 .scaledToFit()
-                .padding(10)
+                .padding(5)
                 .opacity(isOn ? 1.0 : 0.0)
         }
-        .frame(width: 32, height: 32)
+        .frame(width: 28, height: 28)
         
         .background(backgroundView)
         .cornerRadius(6)
         .overlay(
             RoundedRectangle(cornerRadius: 6)
-                .stroke(borderColor, lineWidth: 1)
+                .stroke(borderColor, lineWidth: 2)
         )
         .contentShape(Rectangle()) // Makes the entire area tappable
         .simultaneousGesture(
@@ -50,14 +49,10 @@ struct CustomCheckBox: View {
 
     private var backgroundView: some View {
         if isOn {
-            isPressed ? Color.darkBlue700 : Color.white
+            isPressed ? Color.darkBlue700 : Color.lightBlue700
         } else {
-            isPressed ? Color.darkBlue700.opacity(0.6) : Color.white
+            isPressed ? Color.darkBlue700.opacity(0.6) : Color.clear
         }
-    }
-
-    private var foregroundColor: Color {
-        isOn ? .white : (isPressed ? Color.black.opacity(0.6) : .black)
     }
 
     private var borderColor: Color {

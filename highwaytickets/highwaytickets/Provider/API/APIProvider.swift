@@ -75,16 +75,9 @@ class APIProvider: NetworkServiceProtocol {
             case .customError(let value):
                 let error = BackendError.init(rawValue: value)
                 
-//                if error == .invalidAccessToken, endpoint.needsAuthentication {
-//                    self.authenticationTokenProviderProtocol.unauthorizedError()
-//                    return .failure(error)
-//                } else {
-                    return .failure(error)
-//                }
+                return .failure(error)
             case .unauthorized:
                 if endpoint.needsAuthentication {
-                    //self.authenticationTokenProviderProtocol.unauthorizedError()
-                    //TODO: - Reimplement unauthorized error
                     return .failure(BackendError.unauthorized)
                 } else {
                     return .failure(BackendError.unauthorized)

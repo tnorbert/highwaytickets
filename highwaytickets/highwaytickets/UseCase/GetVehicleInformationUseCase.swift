@@ -24,6 +24,9 @@ struct GetVehicleInformationUseCase: GetVehicleInformationUseCaseProtocol {
         
         switch result {
         case .success(let response):
+            //Since the backend is running locally, we need to have some artificial "delay" on the calls
+            try? await Task.sleep(for: .milliseconds(250))
+            
             return .success(.init(response: response))
         case .failure(let failure):
             return .failure(failure)

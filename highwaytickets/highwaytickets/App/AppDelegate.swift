@@ -41,6 +41,9 @@ class AppDelegate: NSObject, UIApplicationDelegate, ObservableObject {
 extension AppDelegate: AlamofireNetworkEventMonitorDelegate {
     
     func didFinishServingRequest(WithRequest request: URLRequest?, Response response: HTTPURLResponse?, ServerData serverData: Data?, SerializedResponse serializedResponse: String) {
+        
+        //Normally, my custom debug menu solution can show network calls but at the moment, I did not include this dev menu in this test exercise
+        
         //DevInchi.shared.registerNetworkEvent(WithEvent: .init(date: Date(), request: request, response: response, serverData: serverData, serializedResponse: serializedResponse))
     }
     

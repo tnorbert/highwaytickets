@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 //MARK: - Routing
 
@@ -14,7 +15,6 @@ protocol LoaderScreenRouting: AnyObject {
 }
 
 enum LoaderScreenRoutingAction {
-    case authentication
     case content
 }
 
@@ -81,9 +81,50 @@ struct LoaderScreen: View {
                 }
             }
         }
+        .task {
+            setNavbarDesign()
+        }
         .onAppear() {
             animateIn()
         }
+        .alert("loaderScreen.alert.newUpdateAvailable.title", isPresented: $showNewVersionAlert) {
+            Button("general.button.back", role: .cancel) {
+                routing.onLoaderScreenRoutingAction(action: .content)
+            }
+            
+            Button("general.button.download") {
+                routing.onLoaderScreenRoutingAction(action: .content)
+                
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5, execute: {
+                    UIApplication.shared.open(ApplicationConfiguration.shared.appStoreURL)
+                })
+            }
+        } message: {
+            Text("loaderScreen.alert.newUpdateAvailable.message")
+        }
+        .alert("loaderScreen.alert.newCriticalUpdateAvailable.title", isPresented: $showNewCriticalVersionAlert) {
+            Button("general.button.download") {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.25, execute: {
+                    showNewCriticalVersionAlert = true
+                    
+                    UIApplication.shared.open(ApplicationConfiguration.shared.appStoreURL)
+                })
+            }
+        } message: {
+            Text("loaderScreen.alert.newCriticalUpdateAvailable.message")
+        }
+    }
+    
+    private func setNavbarDesign() {
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = .init(Color.neon700)
+        
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.init(Color.darkBlue700), .font: Font.Montserrat.uiFont(size: .large, weight: .bold)]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.init(Color.darkBlue700), .font: Font.Montserrat.uiFont(size: .large, weight: .bold)]
+
+        UINavigationBar.appearance().standardAppearance = appearance
+        UINavigationBar.appearance().scrollEdgeAppearance = appearance
     }
     
     private func checkVersion() async {
