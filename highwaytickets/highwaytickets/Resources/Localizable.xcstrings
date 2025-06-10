@@ -10,6 +10,16 @@
     "%lld Ft" : {
 
     },
+    "checkoutScreen.alert.pruchasingError.title" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Hiba!"
+          }
+        }
+      }
+    },
     "checkoutScreen.button.buy" : {
       "localizations" : {
         "en" : {
@@ -372,6 +382,16 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Tovább"
+          }
+        }
+      }
+    },
+    "general.button.ok" : {
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Rendben"
           }
         }
       }

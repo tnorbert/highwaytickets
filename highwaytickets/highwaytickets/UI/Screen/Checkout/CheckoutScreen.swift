@@ -37,6 +37,8 @@ struct CheckoutScreen: View {
     @State var price: Int = 0
     @State var errorMessage: String? = nil
     @State var isPurchasingInProgres: Bool = false
+    @State var showPurchaseError: Bool = false
+    @State var purchaseErrorMessage: String = ""
 
     var body: some View {
         ZStack {
@@ -152,7 +154,11 @@ struct CheckoutScreen: View {
                 price = parameters.vignette.price * parameters.selectedCounties.count
             }
         }
-        
+        .alert("checkoutScreen.alert.pruchasingError.title", isPresented: $showPurchaseError) {
+            Button("general.button.ok", role: .cancel) { }
+        } message: {
+            Text(purchaseErrorMessage)
+        }
     }
     
     private func buyVignettes() {
@@ -169,7 +175,8 @@ struct CheckoutScreen: View {
             case .success(_):
                 routing.onCheckoutScreenRoutingAction(action: .successfullPurchase)
             case .failure(let failure):
-                break
+                purchaseErrorMessage = failure.localizedDescription
+                showPurchaseError = true
             }
         }
     }

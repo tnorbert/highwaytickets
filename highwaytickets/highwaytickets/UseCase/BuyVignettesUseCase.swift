@@ -5,6 +5,8 @@
 //  Created by Tomo Norbert on 2025. 06. 09..
 //
 
+import Foundation
+
 protocol BuyVignettesUseCaseProtocol {
     func execeute(vignettes: [HighwayVignette], vehicleInformation: VehicleInformation) async -> Swift.Result<Void, Error>
 }
@@ -23,7 +25,7 @@ struct BuyVignettesUseCase: BuyVignettesUseCaseProtocol {
         switch result {
         case .success(_):
             //Since the backend is running locally, we need to have some artificial "delay" on the calls
-            try? await Task.sleep(for: .seconds(1))
+            try? await Task.sleep(for: .milliseconds(500))
             
             return .success(Void())
         case .failure(let failure):
